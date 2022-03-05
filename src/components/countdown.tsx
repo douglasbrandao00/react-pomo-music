@@ -31,7 +31,7 @@ function Countdown(props: CountdownProps) {
       initialRemainingTime={props.timeDown}
       colors={'#004777'}
       onComplete={() => {
-        props.onComplete
+        props.onComplete()
         return { shouldRepeat: true, delay: 0.2 }
       }}
     >

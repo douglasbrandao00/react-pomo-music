@@ -2,15 +2,22 @@ import { useState } from 'react'
 import Countdown from './components/countdown'
 import './App.css'
 
+function playBellSound() {
+  const AUDIO_ASSET_PATH = '../../assets/bell.wav'
+  const bell = new Audio(AUDIO_ASSET_PATH)
+  bell.pause()
+  bell.play()
+  return setTimeout(() => {
+    bell.pause()
+  }, 3_000)
+
+}
 function App() {
-  const [timeDown, setTimeDown] = useState<number>(5)
+  const [timeDown, setTimeDown] = useState<number>(120)
   const [isPlaying, setIsPlaying] = useState<boolean>(true)
 
   function resetTimeDown() {
-    setIsPlaying(false)
-    return setTimeout(() => {
-      return setIsPlaying(true)
-    }, 200);
+    playBellSound()
   }
   return (
     <div className="App">
