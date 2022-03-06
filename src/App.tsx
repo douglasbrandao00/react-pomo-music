@@ -24,7 +24,7 @@ function App() {
   const [pomoKey, setPomoKey] = useState(0)
 
   function resetTimeDown() {
-    //playBellSound()
+    playBellSound()
     setIsPlaying(false)
     revertStatus()
     setIsPlaying(true)
@@ -52,6 +52,8 @@ function App() {
           onComplete={resetTimeDown}
         />
       </header>
+      {isPlaying && <button onClick={() => setIsPlaying(false)}>pause</button>}
+      {!isPlaying && <button onClick={() => setIsPlaying(true)}>start</button>}
     </div>
   )
 }
