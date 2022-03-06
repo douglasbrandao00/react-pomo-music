@@ -12,12 +12,35 @@ function playBellSound() {
   }, 3_000)
 
 }
+const pomoTimer = {
+  work: 0.09 * 60,
+  rest: 0.05 * 60
+}
+type PomoStatus = 'WORK' | 'REST'
 function App() {
-  const [timeDown, setTimeDown] = useState<number>(120)
+  const [timeDown, setTimeDown] = useState<number>(pomoTimer.work)
   const [isPlaying, setIsPlaying] = useState<boolean>(true)
+  const [pomodoroStatus, setPomodoroStatus] = useState<PomoStatus>('WORK')
+  const [pomoKey, setPomoKey] = useState(0)
 
   function resetTimeDown() {
-    playBellSound()
+    //playBellSound()
+    setIsPlaying(false)
+    revertStatus()
+    setIsPlaying(true)
+  }
+  function revertStatus() {
+    if (pomodoroStatus === 'WORK') {
+      setPomodoroTo('REST')
+      return
+    }
+    setPomodoroTo('WORK')
+  }
+  function setPomodoroTo(status: PomoStatus) {
+    const time = status === 'WORK' ? pomoTimer.work : pomoTimer.rest
+    setTimeDown(time)
+    setPomodoroStatus(status)
+    setPomoKey(state => state + 1)
   }
   return (
     <div className="App">
@@ -25,6 +48,7 @@ function App() {
         <Countdown
           timeDown={timeDown}
           isPlaying={isPlaying}
+          key={pomoKey}
           onComplete={resetTimeDown}
         />
       </header>

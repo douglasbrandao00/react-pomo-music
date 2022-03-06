@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 const SECONDS_IN_ONE_TIME = 60
@@ -20,19 +21,21 @@ function formatTime(time: { minutes: number, seconds: number }): string {
 export interface CountdownProps {
   isPlaying: boolean;
   timeDown: number;
+  key: number;
   onComplete: () => void
 }
 
 function Countdown(props: CountdownProps) {
+
   return (
     <CountdownCircleTimer
       isPlaying={props.isPlaying}
       duration={props.timeDown}
-      initialRemainingTime={props.timeDown}
       colors={'#004777'}
+      key={props.key}
       onComplete={() => {
         props.onComplete()
-        return { shouldRepeat: true, delay: 0.2 }
+        return { shouldRepeat: true, delay: 1 }
       }}
     >
       {({ remainingTime }) => formatTime(convertSecondsToTime(remainingTime))}
