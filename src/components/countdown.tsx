@@ -31,7 +31,9 @@ function Countdown(props: CountdownProps) {
     <CountdownCircleTimer
       isPlaying={props.isPlaying}
       duration={props.timeDown}
-      colors={'#004777'}
+      strokeWidth={6}
+      size={220}
+      colors={'#FE6F6B'}
       key={props.key}
       onComplete={() => {
         props.onComplete()

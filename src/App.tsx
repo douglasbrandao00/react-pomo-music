@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Countdown from './components/countdown'
 import './App.css'
+import { Box, Center } from '@chakra-ui/react'
 
 function playBellSound() {
   const AUDIO_ASSET_PATH = '../../assets/bell.wav'
@@ -43,18 +44,29 @@ function App() {
     setPomoKey(state => state + 1)
   }
   return (
-    <div className="App">
-      <header className="App-header">
+    <Center>
+      <Box
+        display={'flex'}
+        flexDir={'column'}
+        alignItems={'center'}
+        maxW='sm'
+        borderRadius='lg'
+
+      >
+
         <Countdown
           timeDown={timeDown}
           isPlaying={isPlaying}
           key={pomoKey}
           onComplete={resetTimeDown}
         />
-      </header>
-      {isPlaying && <button onClick={() => setIsPlaying(false)}>pause</button>}
-      {!isPlaying && <button onClick={() => setIsPlaying(true)}>start</button>}
-    </div>
+
+        {isPlaying && <button onClick={() => setIsPlaying(false)}>pause</button>}
+        {!isPlaying && <button onClick={() => setIsPlaying(true)}>start</button>}
+
+      </Box>
+    </Center>
+
   )
 }
 
