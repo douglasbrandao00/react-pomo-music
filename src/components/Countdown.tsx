@@ -21,7 +21,7 @@ function formatTime(time: { minutes: number, seconds: number }): string {
 export interface CountdownProps {
   isPlaying: boolean;
   timeDown: number;
-  key: number;
+  countDownKey: number;
   onComplete: () => void
 }
 
@@ -34,7 +34,7 @@ function Countdown(props: CountdownProps) {
       strokeWidth={6}
       size={220}
       colors={'#FE6F6B'}
-      key={props.key}
+      key={props.countDownKey}
       onComplete={() => {
         props.onComplete()
         return { shouldRepeat: true, delay: 1 }
