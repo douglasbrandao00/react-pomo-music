@@ -1,14 +1,27 @@
-import React from "react"
-import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Input, useDisclosure } from "@chakra-ui/react"
+import React, { Dispatch } from "react"
+import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, useDisclosure } from "@chakra-ui/react"
+import PomodoroTimeSettings from "./PomodoroTimeSettings"
+import { PomoTimer } from "../pomodoroUtilites"
 
-export default function DrawerExample() {
+
+type PomodoroTimeSettingsProps = {
+  setPomoTimer: Dispatch<PomoTimer>,
+}
+
+export default function DrawerExample(prop: PomodoroTimeSettingsProps) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   return (
     <>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        Open
+      <Button
+        ref={btnRef}
+        my={"4"}
+        mr={"-56"}
+        colorScheme='teal'
+        onClick={onOpen}
+      >
+        Settings
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -19,18 +32,12 @@ export default function DrawerExample() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
-
-          <DrawerBody>
-            <Input placeholder='Type here...' />
+          <DrawerHeader>Pomodoro Settings</DrawerHeader>
+          <DrawerBody >
+            <PomodoroTimeSettings
+              setPomoTimer={prop.setPomoTimer}
+            />
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
