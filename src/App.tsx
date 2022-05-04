@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react'
 import ConfigBar from './components/ConfigBar'
 import Countdown from './components/Countdown'
 import YoutubeSearch from './components/YoutubeSearch'
-import { Box, Button, ButtonGroup, Center, FormControl, FormLabel, Grid, GridItem, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Stack } from '@chakra-ui/react'
-import { convertSecondsToMinutes, DEFAULT_POMO_50_10, playBellSound, PomoStatus, PomoTimer } from './pomodoroUtilites'
-import PomodoroTimeSettings from './components/PomodoroTimeSettings'
+import { Box, Button, Center } from '@chakra-ui/react'
+import {  DEFAULT_POMO_50_10, playBellSound, PomoStatus, PomoTimer } from './pomodoroUtilites'
 
 function App() {
   const [pomoTimer, setPomoTimer] = useState<PomoTimer>(DEFAULT_POMO_50_10)
