@@ -20,7 +20,7 @@ a limited and free account and this project is only for practice sake.
 Although this shoud be replaced by a google's 0Auth authentication in future interactions
 
 ## Coolest features
- - Customizable Pomodoro Timer\
+ - Customizable Pomodoro Timer
  - Youtube integration with type to search
  
 ## Screenshot
