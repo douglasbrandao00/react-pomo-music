@@ -2,6 +2,11 @@
 ### react | react hooks | chakraUI | pomodoro | youtube api | type to search
 
 You can checkou this app in: https://react-pomo-music.vercel.app/
+## Table of Contents
+1. [Introduction](#Introduction)
+2. [Coolest features](#Coolest-features)
+3. [Screenshot](#Screenshot)
+4. [How to Install and Run the Project](#How-to-Install-and-Run-the-Project)
 
 ## Introduction
 PomoMusic has born of a personal need of join the awesome time structure of
