@@ -20,6 +20,14 @@ a limited and free account and this project is only for practice sake.
 Although this shoud be replaced by a google's 0Auth authentication in future interactions
 
 ## Coolest features
+ - Customizable Pomodoro Timer\
+ - Youtube integration with type to search
+ 
+## Screenshot
+![app_home](https://user-images.githubusercontent.com/22304456/171064437-daf0587e-7d7e-4f69-90c6-3cacfb037958.png)
+![app_search](https://user-images.githubusercontent.com/22304456/171064440-9da32bf1-e6b7-443f-9839-56c5d5ad9081.png)
+![app_player](https://user-images.githubusercontent.com/22304456/171064441-414aa2d4-f933-4a54-9ec8-358820a2514d.png)
+![app_custom_timer](https://user-images.githubusercontent.com/22304456/171064444-64f79ff6-e479-45ff-b9af-a03ac7700547.png)
 
 ## How to Install and Run the Project
 Clone this project into your computer:
